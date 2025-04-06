@@ -1,12 +1,12 @@
 import joblib
 import pandas as pd
 
-modelo_tiempo = joblib.load("main\models\modelo_tiempo.pkl")
-modelo_precio = joblib.load("main\models\modelo_precio.pkl")
+modelo_tiempo = joblib.load(r"main\models\modelo_tiempo.pkl")
+modelo_precio = joblib.load(r"main\models\modelo_precio.pkl")
 
-le_origen = joblib.load("main\models\le_origen.pkl")
-le_destino = joblib.load("main\models\le_destino.pkl")
-le_transporte = joblib.load("main\models\le_transporte.pkl")
+le_origen = joblib.load(r"main\models\le_origen.pkl")
+le_destino = joblib.load(r"main\models\le_destino.pkl")
+le_transporte = joblib.load(r"main\models\le_transporte.pkl")
 
 # Datos de entrada
 origen_input = 'A'
