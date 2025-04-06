@@ -1,7 +1,8 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_absolute_error
 
 df = pd.read_csv("dataset_transporte_masivo.csv")
@@ -21,8 +22,8 @@ y_precio = df['precio_total_cop']
 X_train, X_test, y_train_tiempo, y_test_tiempo = train_test_split(X, y_tiempo, test_size=0.3, random_state=42)
 _, _, y_train_precio, y_test_precio = train_test_split(X, y_precio, test_size=0.3, random_state=42)
 
-modelo_tiempo = RandomForestRegressor(n_estimators=100, random_state=42)
-modelo_precio = RandomForestRegressor(n_estimators=100, random_state=42)
+modelo_tiempo = GradientBoostingRegressor(n_estimators=100, random_state=42)
+modelo_precio = GradientBoostingRegressor(n_estimators=100, random_state=42)
 
 modelo_tiempo.fit(X_train, y_train_tiempo)
 modelo_precio.fit(X_train, y_train_precio)
